@@ -67,5 +67,14 @@ class SvgPath{
   static const sort = "assets/svg/sort.svg";
   static const info = "assets/svg/info.svg";
   static const check1 = "assets/svg/check1.svg";
+  static const menus = "assets/svg/menus.svg";
+  static const sendFill = "assets/svg/sendFill.svg";
+  static const sendLine = "assets/svg/sendLine.svg";
+  static const dollarHand = "assets/svg/dollarHand.svg";
+  static const dollarRecycle = "assets/svg/dollarRecycle.svg";
+  static const dollarMoney = "assets/svg/dollarMoney.svg";
+  static const whatsapp = "assets/svg/whatsapp.svg";
+  static const phoneLine = "assets/svg/phoneLine.svg";
+  static const messageLine = "assets/svg/messageLine.svg";
   SvgPath._();
 }

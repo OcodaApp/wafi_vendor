@@ -1,9 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
+import 'package:wafi_vendor/presentation/screens/payout_screen/payout_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_details/accepeted_task_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_details/task_details_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_history_screen/task_history_screen.dart';
+
+import '../../presentation/screens/auth_screens/login_screen.dart';
+import '../../presentation/screens/auth_screens/otp_screen.dart';
+import '../../presentation/screens/auth_screens/register_screen.dart';
+import '../../presentation/screens/intro_screens/select_language_screen.dart';
+import '../../presentation/screens/intro_screens/splash_screen.dart';
+import '../../presentation/screens/intro_screens/welcome_screen.dart';
+import 'screens_name.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     try {
       switch (settings.name) {
-
+        case ScreenName.splashScreen:
+          return MaterialPageRoute(
+            builder: (_) => const SplashScreen(),
+          );
+        case ScreenName.selectLanguageScreen:
+          return MaterialPageRoute(
+            builder: (_) => const SelectLanguageScreen(),
+          );
+        case ScreenName.welcomeScreen:
+          return MaterialPageRoute(
+            builder: (_) => const WelcomeScreen(),
+          );
+        case ScreenName.loginScreen:
+          return MaterialPageRoute(
+            builder: (_) => const LoginScreen(),
+          );
+        case ScreenName.registerScreen:
+          return MaterialPageRoute(
+            builder: (_) => const RegisterScreen(),
+          );
+        case ScreenName.acceptedTaskHistoryScreen:
+          return MaterialPageRoute(
+            builder: (_) => const AcceptedTaskDetailsFirstScreen(),
+          );
+        case ScreenName.taskDetailsScreen:
+          return MaterialPageRoute(
+            builder: (_) => const TaskDetailsFirstScreen(),
+          );
+        case ScreenName.payout:
+          return MaterialPageRoute(
+            builder: (_) => const PayoutScreen(),
+          );
+        case ScreenName.earnings:
+          return MaterialPageRoute(
+            builder: (_) => const EarningsScreen(),
+          );
+        case ScreenName.taskHistoryScreen:
+          return MaterialPageRoute(
+            builder: (_) => const TaskHistoryScreen(),
+          );
+        case ScreenName.otpScreen:
+          return MaterialPageRoute(
+            builder: (_) => const OtpScreen(),
+          );
         default:
           return _errorRoute();
       }

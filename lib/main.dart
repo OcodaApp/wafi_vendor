@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wafi_vendor/presentation/screens/auth_screens/choose_profile_type.dart';
+import 'package:wafi_vendor/presentation/screens/auth_screens/complete_documentation_screen.dart';
 import 'package:wafi_vendor/presentation/screens/auth_screens/login_screen.dart';
+import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
+import 'package:wafi_vendor/presentation/screens/main_layout_screen/main_layout_screen.dart';
+import 'package:wafi_vendor/presentation/screens/payout_screen/payout_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_details/accepeted_task_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_details/task_details_screen.dart';
+import 'package:wafi_vendor/presentation/screens/task_history_screen/task_history_screen.dart';
 
 import 'core/app_theme/app_theme.dart';
 
@@ -23,7 +31,7 @@ class MyApp extends StatelessWidget {
           // debugShowCheckedModeBanner: false,
           // onGenerateRoute: AppRouter.generateRoute,
           // initialRoute: ScreenName.splashScreen,
-          home: LoginScreen(),
+          home: MainLayoutScreen(),
         );
       },
     );

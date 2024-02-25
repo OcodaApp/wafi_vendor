@@ -12,12 +12,13 @@ import 'gradient_svg.dart';
 
 class FormUploadItemWidget extends StatelessWidget {
   final String title;
+  final String description;
   final bool isRequired;
 
   const FormUploadItemWidget({
     super.key,
     required this.title,
-    this.isRequired = false,
+    this.isRequired = false, required this.description,
   });
 
   @override
@@ -53,11 +54,11 @@ class FormUploadItemWidget extends StatelessWidget {
           borderType: BorderType.RRect,
           dashPattern: const [8, 4],
           padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
-          radius: const Radius.circular(16),
+          radius: const Radius.circular(8),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const Icon(
                   Icons.add_circle_outline_sharp,
@@ -65,7 +66,7 @@ class FormUploadItemWidget extends StatelessWidget {
                 ),
                 const CustomSizedBox(width: 8,),
                 Text(
-                  "Upload DRIVER’S LICENSE",
+                  description,
                   style: CustomThemes.greyColor1CTextStyle(context).copyWith(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,

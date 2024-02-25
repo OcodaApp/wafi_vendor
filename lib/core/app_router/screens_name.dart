@@ -34,4 +34,11 @@ class ScreenName{
   static const termsAndConditions = "termsAndConditions";
   static const savedCardsScreen = "savedCardsScreen";
   static const walletScreen = "walletScreen";
+  static const chooseProfileType = "chooseProfileType";
+  static const completeDocumentation = "completeDocumentation";
+  static const earnings = "earnings";
+  static const payout = "payout";
+  static const taskDetailsScreen = "taskDetailsScreen";
+  static const taskHistoryScreen = "taskHistoryScreen";
+  static const acceptedTaskHistoryScreen = "acceptedTaskHistoryScreen";
 }

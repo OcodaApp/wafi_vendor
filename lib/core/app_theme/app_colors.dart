@@ -38,6 +38,10 @@ class AppColors {
   static const color16 = Color(0xff161616);
   static const blackColor = Color(0xff000000);
   static const blueColor = Color(0xff0091FF);
+  static const redTaskColor = Color(0xfffd7f79);
+  static const greenTaskColor = Color(0xffd4fb7c);
+  static const payoutYellowColor = Color(0xfff7ae3d);
+  static const currentBalanceBlueColor = Color(0xff2c7fff);
   static const greenColor = Color(0xff278638);
   static Color borderColor = const Color(0xff000000).withOpacity(0.11);
   static Color shadowColor({value = 0.05}) => const Color(0xff000000).withOpacity(value);

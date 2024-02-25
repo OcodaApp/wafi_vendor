@@ -12,4 +12,7 @@ class ImagesPath{
   static const dummyTire = 'assets/images/dummyTire.png';
   static const tracmax = 'assets/images/tracmax.png';
   static const malathImage = 'assets/images/malathImage.png';
+  static const courier = 'assets/images/courier.png';
+  static const agent = 'assets/images/agent.png';
+  static const mapLocationDetails = 'assets/images/mapLocationDetails.png';
 }

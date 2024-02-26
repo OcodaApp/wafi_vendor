@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Flutter Demo',
           theme: AppTheme.lightTheme,
-          // debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: ScreenName.splashScreen,
-          // home: ContactScreen(),
+          // home: ReviewScreen(),
         );
       },
     );

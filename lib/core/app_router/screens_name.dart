@@ -39,6 +39,8 @@ class ScreenName{
   static const earnings = "earnings";
   static const payout = "payout";
   static const taskDetailsScreen = "taskDetailsScreen";
+  static const profileScreen = "profileScreen";
+  static const contactScreen = "contactScreen";
   static const taskHistoryScreen = "taskHistoryScreen";
   static const acceptedTaskHistoryScreen = "acceptedTaskHistoryScreen";
 }

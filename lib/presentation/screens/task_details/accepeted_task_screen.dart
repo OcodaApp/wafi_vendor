@@ -380,6 +380,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
             CustomOutlinedButton(
               height: 40,
               onPressed: () {},
+              foregroundColor: AppColors.primaryColor,
               width: double.infinity,
               borderColor: AppColors.primaryColor,
               borderRadius: 8,

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wafi_vendor/core/app_theme/app_colors.dart';
-import 'package:wafi_vendor/core/app_theme/custom_themes.dart';
-import 'package:wafi_vendor/core/assets_path/svg_path.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/gradient_svg.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/task_container.dart';
 
+import '../../../core/app_router/screens_name.dart';
+import '../../../core/app_theme/app_colors.dart';
+import '../../../core/app_theme/custom_themes.dart';
+import '../../../core/assets_path/svg_path.dart';
 import '../../../core/constants/constants.dart';
+import '../../widgets/shared_widgets/custom_sized_box.dart';
+import '../../widgets/shared_widgets/gradient_svg.dart';
+import '../../widgets/shared_widgets/task_container.dart';
 
 class MainLayoutScreen extends StatefulWidget {
   const MainLayoutScreen({super.key});
@@ -26,65 +27,76 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.transparent)
+        child: SafeArea(
+          child: ListView(
+            children: [
+              const CustomSizedBox(
+                height: 32,
               ),
-              child: SvgPicture.asset(
+              SvgPicture.asset(
                 SvgPath.wafiLogo, // Path to your SVG logo
                 width: 145,
                 height: 38,
               ),
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                SvgPath.historyExistingCars, // Path to your SVG logo
-                width: 24,
-                height: 24,
+              const CustomSizedBox(
+                height: 48,
               ),
-              title: Text('Task History'),
-              onTap: () {
-                // Handle home item tap
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                SvgPath.editProfile, // Path to your SVG logo
-                width: 24,
-                height: 24,
+              DrawerItem(
+                title: "Task History",
+                svgPath: SvgPath.insurance,
+                onTap: () {
+                  _scaffoldKey.currentState?.closeDrawer();
+                  Navigator.pushNamed(context, ScreenName.taskHistoryScreen);
+                },
               ),
-              title: Text('Profile'),
-              onTap: () {
-                // Handle settings item tap
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                SvgPath.wallet, // Path to your SVG logo
-                width: 24,
-                height: 24,
+              DrawerItem(
+                title: "Profile",
+                svgPath: SvgPath.accountNew,
+                onTap: () {
+                  _scaffoldKey.currentState?.closeDrawer();
+                  Navigator.pushNamed(
+                    context,
+                    ScreenName.profileScreen,
+                  );
+                },
               ),
-              title: Text('Revenue'),
-              onTap: () {
-                // Handle about item tap
-              },
-            ),
-            ListTile(
-              leading: SvgPicture.asset(
-                SvgPath.phoneLine, // Path to your SVG logo
-                width: 24,
-                height: 24,
+              DrawerItem(
+                title: "Payout",
+                svgPath: SvgPath.warrenty,
+                onTap: () {
+                  _scaffoldKey.currentState?.closeDrawer();
+                  Navigator.pushNamed(context, ScreenName.payout);
+                },
               ),
-              title: Text('Contact'),
-              onTap: () {
-                // Handle about item tap
-              },
-            ),
-          ],
+              DrawerItem(
+                title: "Revenue",
+                svgPath: SvgPath.wallet,
+                onTap: () {
+                  _scaffoldKey.currentState?.closeDrawer();
+                  Navigator.pushNamed(
+                    context,
+                    ScreenName.earnings,
+                  );
+                },
+              ),
+              DrawerItem(
+                title: "Contact",
+                svgPath: SvgPath.phoneLine,
+                onTap: () {
+                  _scaffoldKey.currentState?.closeDrawer();
+                  Navigator.pushNamed(
+                    context,
+                    ScreenName.contactScreen,
+                  );
+                },
+              ),
+              DrawerItem(
+                title: "Logout",
+                svgPath: SvgPath.logoutNew,
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       ),
       appBar: PreferredSize(
@@ -226,6 +238,38 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
               ),
             )
           : null,
+    );
+  }
+}
+
+class DrawerItem extends StatelessWidget {
+  final String title;
+  final String svgPath;
+  final void Function()? onTap;
+
+  const DrawerItem({
+    super.key,
+    required this.title,
+    required this.svgPath,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
+      style: ListTileStyle.drawer,
+      visualDensity: const VisualDensity(
+        horizontal: VisualDensity.minimumDensity,
+        vertical: VisualDensity.minimumDensity,
+      ),
+      leading: SvgPicture.asset(
+        svgPath, // Path to your SVG logo
+        width: 24.w,
+        height: 24.h,
+      ),
+      title: Text(title),
+      onTap: onTap,
     );
   }
 }

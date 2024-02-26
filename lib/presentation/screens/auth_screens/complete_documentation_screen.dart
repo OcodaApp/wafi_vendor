@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wafi_vendor/core/app_router/screens_name.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_app_bar.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/form_date_item.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/form_drom_down_widget.dart';
@@ -63,7 +64,9 @@ class CompleteDocumentationScreen extends StatelessWidget {
             height: 32,
           ),
           CustomGradientButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, ScreenName.MainLayoutScreen);
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

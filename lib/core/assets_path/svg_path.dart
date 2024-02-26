@@ -76,5 +76,8 @@ class SvgPath{
   static const whatsapp = "assets/svg/whatsapp.svg";
   static const phoneLine = "assets/svg/phoneLine.svg";
   static const messageLine = "assets/svg/messageLine.svg";
+  static const accountNew = "assets/svg/accountNew.svg";
+  static const logoutNew = "assets/svg/logoutNew.svg";
+  static const settingsNew = "assets/svg/settingsNew.svg";
   SvgPath._();
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:wafi_vendor/core/app_router/screens_name.dart';
 import 'package:wafi_vendor/core/app_theme/app_colors.dart';
 import 'package:wafi_vendor/core/app_theme/custom_themes.dart';
 import 'package:wafi_vendor/core/assets_path/images_path.dart';
@@ -194,7 +195,9 @@ class _ChooseProfileTypeScreenState extends State<ChooseProfileTypeScreen> {
               height: 32,
             ),
             CustomGradientButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, ScreenName.completeDocumentation,arguments: courier);
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

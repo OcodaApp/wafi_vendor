@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wafi_vendor/presentation/screens/auth_screens/choose_profile_type.dart';
+import 'package:wafi_vendor/presentation/screens/auth_screens/complete_documentation_screen.dart';
 import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
+import 'package:wafi_vendor/presentation/screens/main_layout_screen/main_layout_screen.dart';
 import 'package:wafi_vendor/presentation/screens/payout_screen/payout_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/accepeted_task_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/task_details_screen.dart';
@@ -8,9 +11,11 @@ import 'package:wafi_vendor/presentation/screens/task_history_screen/task_histor
 import '../../presentation/screens/auth_screens/login_screen.dart';
 import '../../presentation/screens/auth_screens/otp_screen.dart';
 import '../../presentation/screens/auth_screens/register_screen.dart';
+import '../../presentation/screens/contact/contact_screen.dart';
 import '../../presentation/screens/intro_screens/select_language_screen.dart';
 import '../../presentation/screens/intro_screens/splash_screen.dart';
 import '../../presentation/screens/intro_screens/welcome_screen.dart';
+import '../../presentation/screens/profile_screen/profile_screen.dart';
 import 'screens_name.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -44,9 +49,30 @@ class AppRouter {
           return MaterialPageRoute(
             builder: (_) => const TaskDetailsFirstScreen(),
           );
+        case ScreenName.MainLayoutScreen:
+          return MaterialPageRoute(
+            builder: (_) => const MainLayoutScreen(),
+          );
+        case ScreenName.chooseProfileType:
+          return MaterialPageRoute(
+            builder: (_) => const ChooseProfileTypeScreen(),
+          );
+        case ScreenName.completeDocumentation:
+          final bool args = settings.arguments as bool;
+          return MaterialPageRoute(
+            builder: (_) =>  CompleteDocumentationScreen(isCarDetails: args),
+          );
         case ScreenName.payout:
           return MaterialPageRoute(
             builder: (_) => const PayoutScreen(),
+          );
+        case ScreenName.profileScreen:
+          return MaterialPageRoute(
+            builder: (_) => const ProfileScreen(),
+          );
+        case ScreenName.contactScreen:
+          return MaterialPageRoute(
+            builder: (_) => const ContactScreen(),
           );
         case ScreenName.earnings:
           return MaterialPageRoute(

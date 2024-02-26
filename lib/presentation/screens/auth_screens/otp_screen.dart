@@ -55,7 +55,7 @@ class OtpScreen extends StatelessWidget {
             ),
             onPressed: () {
 
-              Navigator.pushNamed(context, ScreenName.completeProfileData);
+              Navigator.pushNamed(context, ScreenName.chooseProfileType);
             },
           )
         ],

@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
 import 'package:wafi_vendor/core/app_theme/custom_themes.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_app_bar.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
@@ -14,8 +15,14 @@ import '../../../core/assets_path/svg_path.dart';
 import '../../../core/constants/constants.dart';
 import '../../widgets/shared_widgets/gradient_svg.dart';
 
-class ReviewScreen extends StatelessWidget {
+class ReviewScreen extends StatefulWidget {
   const ReviewScreen({super.key});
+
+  @override
+  State<ReviewScreen> createState() => _ReviewScreenState();
+}
+
+class _ReviewScreenState extends State<ReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +179,8 @@ class ReviewScreen extends StatelessWidget {
             height: 96,
           ),
           CustomGradientButton(
-            onPressed: (){},
+            onPressed: (){
+            },
               child: Text(
             "Submit",
             style: CustomThemes.whiteColoTextTheme(context).copyWith(

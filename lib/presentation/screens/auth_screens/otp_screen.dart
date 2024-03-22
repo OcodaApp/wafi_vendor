@@ -22,41 +22,49 @@ class OtpScreen extends StatelessWidget {
         preferredSize: preferredSize,
         child: const LogoAppBar(),
       ),
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      body: Stack(
         children: [
-          const ScreenTitleWidget(
-            title: 'Verification',
-          ),
-          const CustomSizedBox(
-            height: 24,
-          ),
-          Text(
-            "Enter OTP",
-            style: CustomThemes.greyColor16TextStyle(context).copyWith(
-              fontWeight: FontWeight.w400,
-              fontSize: 12.sp,
-            ),
-          ),
-          const CustomSizedBox(
-            height: 16,
-          ),
-          PinFieldBuilder(),
-          const CustomSizedBox(
-            height: 164,
-          ),
-          CustomGradientButton(
-            child: Text(
-              "Submit",
-              style: CustomThemes.whiteColoTextTheme(context).copyWith(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w700,
+          ListView(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+            children: [
+              const ScreenTitleWidget(
+                title: 'Verification',
               ),
+              const CustomSizedBox(
+                height: 24,
+              ),
+              Text(
+                "Enter OTP",
+                style: CustomThemes.greyColor16TextStyle(context).copyWith(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.sp,
+                ),
+              ),
+              const CustomSizedBox(
+                height: 16,
+              ),
+              const PinFieldBuilder(),
+              const CustomSizedBox(
+                height: 40,
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: 80.h,
+            left: 16.w,
+            right: 16.w,
+            child: CustomGradientButton(
+              child: Text(
+                "Submit",
+                style: CustomThemes.whiteColoTextTheme(context).copyWith(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, ScreenName.otpScreen);
+              },
             ),
-            onPressed: () {
-
-              Navigator.pushNamed(context, ScreenName.chooseProfileType);
-            },
           )
         ],
       ),

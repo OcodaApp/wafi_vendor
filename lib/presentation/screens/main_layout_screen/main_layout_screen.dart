@@ -129,8 +129,8 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
                 width: 8,
               ),
               SizedBox(
-                height: 32.h,
-                width: 48.w,
+                height: 48.h,
+                width: 56.w,
                 child: FittedBox(
                   fit: BoxFit.fill,
                   child: Switch(

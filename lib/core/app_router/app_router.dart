@@ -4,6 +4,7 @@ import 'package:wafi_vendor/presentation/screens/auth_screens/complete_documenta
 import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
 import 'package:wafi_vendor/presentation/screens/main_layout_screen/main_layout_screen.dart';
 import 'package:wafi_vendor/presentation/screens/payout_screen/payout_screen.dart';
+import 'package:wafi_vendor/presentation/screens/support_screen/chat_support_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/accepeted_task_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/task_details_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_history_screen/task_history_screen.dart';
@@ -11,6 +12,7 @@ import 'package:wafi_vendor/presentation/screens/task_history_screen/task_histor
 import '../../presentation/screens/auth_screens/login_screen.dart';
 import '../../presentation/screens/auth_screens/otp_screen.dart';
 import '../../presentation/screens/auth_screens/register_screen.dart';
+import '../../presentation/screens/chat_screen/chat_screen.dart';
 import '../../presentation/screens/contact/contact_screen.dart';
 import '../../presentation/screens/intro_screens/select_language_screen.dart';
 import '../../presentation/screens/intro_screens/splash_screen.dart';
@@ -85,6 +87,14 @@ class AppRouter {
         case ScreenName.otpScreen:
           return MaterialPageRoute(
             builder: (_) => const OtpScreen(),
+          );
+        case ScreenName.supportChatScreen:
+          return MaterialPageRoute(
+            builder: (_) => const ChatSupportScreen(),
+          );
+        case ScreenName.chatScreen:
+          return MaterialPageRoute(
+            builder: (_) => const ChatScreen(),
           );
         default:
           return _errorRoute();

@@ -7,6 +7,7 @@ import 'package:wafi_vendor/core/assets_path/svg_path.dart';
 import 'package:wafi_vendor/core/constants/extensions.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
 
+import '../../../core/app_router/screens_name.dart';
 import '../../../core/app_theme/custom_themes.dart';
 import '../../widgets/shared_widgets/accept_task_dialog_time.dart';
 import '../../widgets/shared_widgets/gradiant_color_button.dart';
@@ -272,11 +273,11 @@ class TaskDetailsFirstScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomSizedBox(height: 48,),
+            const CustomSizedBox(height: 48,),
             CustomGradientButton(
-              height: 40,
+              height: 48,
               onPressed: () {
-                showDialog(context: context, builder: (_)=>AcceptTimeDialog());
+                Navigator.pushNamed(context, ScreenName.acceptedTaskHistoryScreen);
               },
               width: double.infinity,
               child: Text(

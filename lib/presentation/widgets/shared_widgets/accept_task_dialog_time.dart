@@ -148,7 +148,7 @@ class _AcceptTimeDialogState extends State<AcceptTimeDialog> {
           CustomSizedBox(height: 32,),
           CustomGradientButton(
             onPressed: (){
-              Navigator.pushNamed(context, ScreenName.acceptedTaskHistoryScreen);
+
             },
             height: 40,
             child: Text(

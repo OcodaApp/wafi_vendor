@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wafi_vendor/presentation/screens/auth_screens/choose_profile_type.dart';
 import 'package:wafi_vendor/presentation/screens/auth_screens/complete_documentation_screen.dart';
 import 'package:wafi_vendor/presentation/screens/auth_screens/login_screen.dart';
+import 'package:wafi_vendor/presentation/screens/chat_screen/chat_screen.dart';
 import 'package:wafi_vendor/presentation/screens/contact/contact_screen.dart';
 import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
 import 'package:wafi_vendor/presentation/screens/main_layout_screen/main_layout_screen.dart';
@@ -34,9 +35,9 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: AppTheme.lightTheme,
           // debugShowCheckedModeBanner: false,
-          // onGenerateRoute: AppRouter.generateRoute,
-          // initialRoute: ScreenName.splashScreen,
-          home: ReviewScreen(),
+          onGenerateRoute: AppRouter.generateRoute,
+          initialRoute: ScreenName.splashScreen,
+          // home: ChatScreen(),
         );
       },
     );

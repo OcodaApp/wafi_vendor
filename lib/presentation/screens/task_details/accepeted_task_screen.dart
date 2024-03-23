@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wafi_vendor/core/app_router/screens_name.dart';
 import 'package:wafi_vendor/core/app_theme/app_colors.dart';
 import 'package:wafi_vendor/core/assets_path/images_path.dart';
 import 'package:wafi_vendor/core/assets_path/svg_path.dart';
 import 'package:wafi_vendor/core/constants/extensions.dart';
+import 'package:wafi_vendor/presentation/widgets/dialogs/finish_task_dialog.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_outlined_button.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/gradient_svg.dart';
@@ -45,10 +47,10 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 24,
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 24,
             ),
             Container(
@@ -70,7 +72,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 ),
               ),
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 16,
             ),
             Container(
@@ -131,7 +133,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 24,
             ),
             Text(
@@ -141,7 +143,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 16,
             ),
             Container(
@@ -180,7 +182,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  CustomSizedBox(
+                  const CustomSizedBox(
                     height: 8,
                   ),
                   Row(
@@ -217,7 +219,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  CustomSizedBox(
+                  const CustomSizedBox(
                     height: 8,
                   ),
                   Text(
@@ -234,7 +236,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CustomSizedBox(
+                  const CustomSizedBox(
                     height: 8,
                   ),
                   Row(
@@ -258,7 +260,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  CustomSizedBox(
+                  const CustomSizedBox(
                     height: 2,
                   ),
                   Row(
@@ -285,7 +287,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomSizedBox(height: 24,),
+            const CustomSizedBox(height: 24,),
             Text(
               "Contact Customer",
               style: CustomThemes.greyColor75TextStyle(context).copyWith(
@@ -293,7 +295,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            CustomSizedBox(height: 16,),
+            const CustomSizedBox(height: 16,),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
@@ -309,11 +311,14 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    leading: GradientSvg(svgPath: SvgPath.messageLine),
-                    shape: UnderlineInputBorder(
+                    leading: const GradientSvg(svgPath: SvgPath.messageLine),
+                    shape: const UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: AppColors.primaryColor, width: 0.9)),
                     contentPadding: EdgeInsets.zero,
+                    onTap: (){
+                      Navigator.pushNamed(context, ScreenName.chatScreen);
+                    },
                     title: Text(
                       "Chat with customer",
                       style:
@@ -322,14 +327,14 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    visualDensity: VisualDensity(
+                    visualDensity: const VisualDensity(
                       horizontal: VisualDensity.minimumDensity,
                       vertical: VisualDensity.minimumDensity,
                     ),
                   ),
                   ListTile(
-                    leading: GradientSvg(svgPath: SvgPath.phoneLine),
-                    shape: UnderlineInputBorder(
+                    leading: const GradientSvg(svgPath: SvgPath.phoneLine),
+                    shape: const UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: AppColors.primaryColor, width: 0.9)),
                     contentPadding: EdgeInsets.zero,
@@ -341,7 +346,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    visualDensity: VisualDensity(
+                    visualDensity: const VisualDensity(
                       horizontal: VisualDensity.minimumDensity,
                       vertical: VisualDensity.minimumDensity,
                     ),
@@ -349,12 +354,12 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                   ListTile(
                     leading: SvgPicture.asset(
                       SvgPath.whatsapp,
-                      colorFilter: ColorFilter.mode(
+                      colorFilter: const ColorFilter.mode(
                         AppColors.greenColor,
                         BlendMode.srcIn,
                       ),
                     ),
-                    shape: UnderlineInputBorder(
+                    shape: const UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: AppColors.primaryColor, width: 0.9)),
                     contentPadding: EdgeInsets.zero,
@@ -366,7 +371,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    visualDensity: VisualDensity(
+                    visualDensity: const VisualDensity(
                       horizontal: VisualDensity.minimumDensity,
                       vertical: VisualDensity.minimumDensity,
                     ),
@@ -374,12 +379,14 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomSizedBox(
+            const CustomSizedBox(
               height: 48,
             ),
             CustomOutlinedButton(
-              height: 40,
-              onPressed: () {},
+              height: 48,
+              onPressed: () {
+                showDialog(context: context, builder: (_)=>FinishTaskDialog(),);
+              },
               foregroundColor: AppColors.primaryColor,
               width: double.infinity,
               borderColor: AppColors.primaryColor,
@@ -393,7 +400,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
               ),
             ),
 
-            CustomSizedBox(height: 24,),
+            const CustomSizedBox(height: 24,),
           ],
         ).symmetricPadding(horizontal: 16),
       ),

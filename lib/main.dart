@@ -17,6 +17,7 @@ import 'package:wafi_vendor/presentation/screens/task_history_screen/task_histor
 import 'core/app_router/app_router.dart';
 import 'core/app_router/screens_name.dart';
 import 'core/app_theme/app_theme.dart';
+import 'presentation/screens/done_task_images_screen_screen/done_task_images_screen_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           // debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: ScreenName.splashScreen,
-          // home: ChatScreen(),
+          // home: DoneTaskImagesScreen(),
         );
       },
     );

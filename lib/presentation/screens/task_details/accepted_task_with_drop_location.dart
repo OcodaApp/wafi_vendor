@@ -12,8 +12,8 @@ import '../../widgets/shared_widgets/custom_outlined_button.dart';
 import '../../widgets/shared_widgets/custom_sized_box.dart';
 import '../../widgets/shared_widgets/gradient_svg.dart';
 
-class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
-  const AcceptedTaskDetailsFirstScreen({super.key});
+class DropAcceptedTaskDetailsFirstScreen extends StatelessWidget {
+  const DropAcceptedTaskDetailsFirstScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,49 +85,99 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                   8.r,
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 2.h,
-                      horizontal: 8.w,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.greyColorD8,
-                      borderRadius: BorderRadius.circular(
-                        8.r,
-                      ),
-                    ),
-                    child: Text(
-                      "Pickup",
-                      style:
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 2.h,
+                          horizontal: 8.w,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColorD8,
+                          borderRadius: BorderRadius.circular(
+                            8.r,
+                          ),
+                        ),
+                        child: Text(
+                          "Pickup",
+                          style:
                           CustomThemes.greyColor1CTextStyle(context).copyWith(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "4376 Theresa Pines",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Abu Dhabi Emirate",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
-                  const CustomSizedBox(
-                    height: 8,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 2.h,
+                          horizontal: 8.w,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColorD8,
+                          borderRadius: BorderRadius.circular(
+                            8.r,
+                          ),
+                        ),
+                        child: Text(
+                          "Customer",
+                          style:
+                          CustomThemes.greyColor1CTextStyle(context).copyWith(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "4376 Theresa Pines",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Abu Dhabi Emirate",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
-                  Text(
-                    "4376 Theresa Pines",
-                    style: CustomThemes.greyColor75TextStyle(context).copyWith(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const CustomSizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    "Abu Dhabi Emirate",
-                    style: CustomThemes.greyColor75TextStyle(context).copyWith(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
                 ],
               ),
             ),
@@ -165,7 +215,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Rana Rana",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
                         ),
@@ -173,7 +223,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Order ID: 6243692",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
                         ),
@@ -189,7 +239,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Audi 4578",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 10.sp,
                         ),
@@ -243,7 +293,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Cach To Be Collected",
                         style:
-                            CustomThemes.greyColor75TextStyle(context).copyWith(
+                        CustomThemes.greyColor75TextStyle(context).copyWith(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -251,7 +301,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "You Will Recieve",
                         style:
-                            CustomThemes.greyColor75TextStyle(context).copyWith(
+                        CustomThemes.greyColor75TextStyle(context).copyWith(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -267,7 +317,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "230 SAR",
                         style:
-                            CustomThemes.greyColor75TextStyle(context).copyWith(
+                        CustomThemes.greyColor75TextStyle(context).copyWith(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -275,7 +325,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "230 SAR",
                         style:
-                            CustomThemes.greyColor75TextStyle(context).copyWith(
+                        CustomThemes.greyColor75TextStyle(context).copyWith(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -320,7 +370,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                     title: Text(
                       "Chat with customer",
                       style:
-                          CustomThemes.greyColor75TextStyle(context).copyWith(
+                      CustomThemes.greyColor75TextStyle(context).copyWith(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
                       ),
@@ -339,7 +389,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                     title: Text(
                       "Connect through Call",
                       style:
-                          CustomThemes.greyColor75TextStyle(context).copyWith(
+                      CustomThemes.greyColor75TextStyle(context).copyWith(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
                       ),
@@ -364,7 +414,7 @@ class AcceptedTaskDetailsFirstScreen extends StatelessWidget {
                     title: Text(
                       "Connect through Call",
                       style:
-                          CustomThemes.greyColor75TextStyle(context).copyWith(
+                      CustomThemes.greyColor75TextStyle(context).copyWith(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
                       ),

@@ -4,6 +4,7 @@ import 'package:wafi_vendor/presentation/screens/auth_screens/complete_documenta
 import 'package:wafi_vendor/presentation/screens/earnings/earnings_screen.dart';
 import 'package:wafi_vendor/presentation/screens/main_layout_screen/main_layout_screen.dart';
 import 'package:wafi_vendor/presentation/screens/payout_screen/payout_screen.dart';
+import 'package:wafi_vendor/presentation/screens/review_screen/review_screen.dart';
 import 'package:wafi_vendor/presentation/screens/support_screen/chat_support_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/accepeted_task_screen.dart';
 import 'package:wafi_vendor/presentation/screens/task_details/task_details_screen.dart';
@@ -14,10 +15,13 @@ import '../../presentation/screens/auth_screens/otp_screen.dart';
 import '../../presentation/screens/auth_screens/register_screen.dart';
 import '../../presentation/screens/chat_screen/chat_screen.dart';
 import '../../presentation/screens/contact/contact_screen.dart';
+import '../../presentation/screens/done_task_images_screen_screen/done_task_images_screen_screen.dart';
 import '../../presentation/screens/intro_screens/select_language_screen.dart';
 import '../../presentation/screens/intro_screens/splash_screen.dart';
 import '../../presentation/screens/intro_screens/welcome_screen.dart';
 import '../../presentation/screens/profile_screen/profile_screen.dart';
+import '../../presentation/screens/task_details/accepted_task_with_drop_location.dart';
+import '../../presentation/screens/task_details/drop_task_details_screen.dart';
 import 'screens_name.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -51,13 +55,21 @@ class AppRouter {
           return MaterialPageRoute(
             builder: (_) => const TaskDetailsFirstScreen(),
           );
-        case ScreenName.MainLayoutScreen:
+        case ScreenName.dropTaskDetailsScreen:
+          return MaterialPageRoute(
+            builder: (_) => const DropTaskDetailsFirstScreen(),
+          );
+        case ScreenName.mainLayoutScreen:
           return MaterialPageRoute(
             builder: (_) => const MainLayoutScreen(),
           );
         case ScreenName.chooseProfileType:
           return MaterialPageRoute(
             builder: (_) => const ChooseProfileTypeScreen(),
+          );
+        case ScreenName.reviewScreen:
+          return MaterialPageRoute(
+            builder: (_) => const ReviewScreen(),
           );
         case ScreenName.completeDocumentation:
           final bool args = settings.arguments as bool;
@@ -76,6 +88,10 @@ class AppRouter {
           return MaterialPageRoute(
             builder: (_) => const ContactScreen(),
           );
+        case ScreenName.doneTaskImagesScreen:
+          return MaterialPageRoute(
+            builder: (_) => const DoneTaskImagesScreen(),
+          );
         case ScreenName.earnings:
           return MaterialPageRoute(
             builder: (_) => const EarningsScreen(),
@@ -91,6 +107,10 @@ class AppRouter {
         case ScreenName.supportChatScreen:
           return MaterialPageRoute(
             builder: (_) => const ChatSupportScreen(),
+          );
+        case ScreenName.dropAcceptedTaskHistoryScreen:
+          return MaterialPageRoute(
+            builder: (_) => const DropAcceptedTaskDetailsFirstScreen(),
           );
         case ScreenName.chatScreen:
           return MaterialPageRoute(

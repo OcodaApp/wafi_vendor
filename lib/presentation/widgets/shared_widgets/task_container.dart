@@ -9,24 +9,31 @@ import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box
 
 class TaskContainer extends StatelessWidget {
   final Widget? child;
-  final Color backgroundTaskColor;
+  final int index;
 
   const TaskContainer({
     super.key,
     this.child,
-    this.backgroundTaskColor = AppColors.primaryColor,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.pushNamed(context, ScreenName.taskDetailsScreen);
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          index % 2 != 0
+              ? ScreenName.taskDetailsScreen
+              : ScreenName.dropTaskDetailsScreen,
+        );
       },
       child: Container(
         padding: EdgeInsetsDirectional.only(start: 5.w),
         decoration: BoxDecoration(
-          color: backgroundTaskColor,
+          color: index % 2 != 0
+              ? AppColors.redTaskColor
+              : AppColors.greenTaskColor,
           borderRadius: BorderRadius.circular(8.r),
           boxShadow: [
             BoxShadow(
@@ -72,11 +79,12 @@ class TaskContainer extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          "Your open gate to the world, Enjoy ! Second Line." * 2,
+                          "Your open gate to the world, Enjoy ! Second Line." *
+                              2,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
-                          style:
-                              CustomThemes.greyColor1CTextStyle(context).copyWith(
+                          style: CustomThemes.greyColor1CTextStyle(context)
+                              .copyWith(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
                           ),
@@ -92,8 +100,9 @@ class TaskContainer extends StatelessWidget {
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          "Battery Service",
-                          style: CustomThemes.primaryTextStyle(context).copyWith(
+                          index % 2 != 0 ? "Battery Service" : "Spare Parts",
+                          style:
+                              CustomThemes.primaryTextStyle(context).copyWith(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
                           ),

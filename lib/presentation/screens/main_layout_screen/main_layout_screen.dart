@@ -207,9 +207,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 16.w, vertical: 32.h),
                           itemBuilder: (_, index) => TaskContainer(
-                            backgroundTaskColor: index % 2 != 0
-                                ? AppColors.redTaskColor
-                                : AppColors.greenTaskColor,
+                            index:index,
                           ),
                           separatorBuilder: (_, index) => const CustomSizedBox(
                             height: 16,
@@ -222,9 +220,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
                             vertical: 32.h,
                           ),
                           itemBuilder: (_, index) => TaskContainer(
-                            backgroundTaskColor: index % 2 == 0
-                                ? AppColors.redTaskColor
-                                : AppColors.greenTaskColor,
+                            index:index,
                           ),
                           separatorBuilder: (_, index) => const CustomSizedBox(
                             height: 16,

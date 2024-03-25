@@ -11,8 +11,8 @@ import '../../../core/app_router/screens_name.dart';
 import '../../../core/app_theme/custom_themes.dart';
 import '../../widgets/shared_widgets/gradiant_color_button.dart';
 
-class TaskDetailsFirstScreen extends StatelessWidget {
-  const TaskDetailsFirstScreen({super.key});
+class DropTaskDetailsFirstScreen extends StatelessWidget {
+  const DropTaskDetailsFirstScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,48 +89,99 @@ class TaskDetailsFirstScreen extends StatelessWidget {
                   8.r,
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 2.h,
-                      horizontal: 8.w,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.greyColorD8,
-                      borderRadius: BorderRadius.circular(
-                        8.r,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 2.h,
+                          horizontal: 8.w,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColorD8,
+                          borderRadius: BorderRadius.circular(
+                            8.r,
+                          ),
+                        ),
+                        child: Text(
+                          "Pickup",
+                          style:
+                          CustomThemes.greyColor1CTextStyle(context).copyWith(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "Pickup",
-                      style: CustomThemes.greyColor1CTextStyle(context).copyWith(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
+                      const CustomSizedBox(
+                        height: 8,
                       ),
-                    ),
+                      Text(
+                        "4376 Theresa Pines",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Abu Dhabi Emirate",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
-                  const CustomSizedBox(
-                    height: 8,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 2.h,
+                          horizontal: 8.w,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColorD8,
+                          borderRadius: BorderRadius.circular(
+                            8.r,
+                          ),
+                        ),
+                        child: Text(
+                          "Customer",
+                          style:
+                          CustomThemes.greyColor1CTextStyle(context).copyWith(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "4376 Theresa Pines",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const CustomSizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Abu Dhabi Emirate",
+                        style: CustomThemes.greyColor75TextStyle(context).copyWith(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
-                  Text(
-                    "4376 Theresa Pines",
-                    style: CustomThemes.greyColor75TextStyle(context).copyWith(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const CustomSizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    "Abu Dhabi Emirate",
-                    style: CustomThemes.greyColor75TextStyle(context).copyWith(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
                 ],
               ),
             ),
@@ -164,7 +215,7 @@ class TaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Rana Rana",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
                         ),
@@ -172,7 +223,7 @@ class TaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Order ID: 6243692",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
                         ),
@@ -186,7 +237,7 @@ class TaskDetailsFirstScreen extends StatelessWidget {
                       Text(
                         "Audi 4578",
                         style:
-                            CustomThemes.greyColor1CTextStyle(context).copyWith(
+                        CustomThemes.greyColor1CTextStyle(context).copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 10.sp,
                         ),
@@ -276,7 +327,7 @@ class TaskDetailsFirstScreen extends StatelessWidget {
             CustomGradientButton(
               height: 48,
               onPressed: () {
-                Navigator.pushNamed(context, ScreenName.acceptedTaskHistoryScreen);
+                Navigator.pushNamed(context, ScreenName.dropAcceptedTaskHistoryScreen);
               },
               width: double.infinity,
               child: Text(

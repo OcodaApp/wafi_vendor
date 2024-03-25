@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wafi_vendor/core/app_theme/app_colors.dart';
-import 'package:wafi_vendor/core/assets_path/fonts_path.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_elevated_button.dart';
 
-import 'gradient widgets.dart';
 
 class CustomGradientButton extends StatelessWidget {
   final void Function()? onPressed;

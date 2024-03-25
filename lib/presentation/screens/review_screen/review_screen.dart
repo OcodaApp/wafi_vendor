@@ -2,17 +2,16 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
-import 'package:wafi_vendor/core/app_theme/custom_themes.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_app_bar.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_text_form_field.dart';
-import 'package:wafi_vendor/presentation/widgets/shared_widgets/gradiant_color_button.dart';
-
+import 'package:wafi_vendor/core/app_router/screens_name.dart';
 import '../../../core/app_theme/app_colors.dart';
+import '../../../core/app_theme/custom_themes.dart';
 import '../../../core/assets_path/images_path.dart';
 import '../../../core/assets_path/svg_path.dart';
 import '../../../core/constants/constants.dart';
+import '../../widgets/shared_widgets/custom_app_bar.dart';
+import '../../widgets/shared_widgets/custom_sized_box.dart';
+import '../../widgets/shared_widgets/custom_text_form_field.dart';
+import '../../widgets/shared_widgets/gradiant_color_button.dart';
 import '../../widgets/shared_widgets/gradient_svg.dart';
 
 class ReviewScreen extends StatefulWidget {
@@ -29,7 +28,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: preferredSize,
-        child: CustomAppBar(
+        child: const CustomAppBar(
           title: "Review",
         ),
       ),
@@ -38,7 +37,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
           horizontal: 16.sp,
         ),
         children: [
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 32,
           ),
           Row(
@@ -47,13 +46,13 @@ class _ReviewScreenState extends State<ReviewScreen> {
                 height: 40.h,
                 width: 40.w,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                decoration: BoxDecoration(shape: BoxShape.circle),
+                decoration: const BoxDecoration(shape: BoxShape.circle),
                 child: Image.asset(
                   ImagesPath.categoriesDummy2,
                   fit: BoxFit.cover,
                 ),
               ),
-              CustomSizedBox(
+              const CustomSizedBox(
                 width: 16,
               ),
               Column(
@@ -75,7 +74,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                   )
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -97,7 +96,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
               ),
             ],
           ),
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 24,
           ),
           Align(
@@ -110,7 +109,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
               itemCount: 5,
               itemSize: 28.sp,
               itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
-              itemBuilder: (context, _) => Icon(
+              itemBuilder: (context, _) => const Icon(
                 Icons.star,
                 color: Colors.amber,
               ),
@@ -119,7 +118,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
               },
             ),
           ),
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 24,
           ),
           Text(
@@ -129,17 +128,17 @@ class _ReviewScreenState extends State<ReviewScreen> {
               fontWeight: FontWeight.w700,
             ),
           ),
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 12,
           ),
-          CustomTextField(
+          const CustomTextField(
             hintText: "Write your comments here",
             filled: true,
             borderColor: AppColors.greyColorF3,
             fillColor: AppColors.greyColorF3,
             maxlines: 3,
           ),
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 24,
           ),
           SizedBox(
@@ -175,11 +174,12 @@ class _ReviewScreenState extends State<ReviewScreen> {
               ],
             ),
           ),
-          CustomSizedBox(
+          const CustomSizedBox(
             height: 96,
           ),
           CustomGradientButton(
             onPressed: (){
+              Navigator.pushNamedAndRemoveUntil(context, ScreenName.mainLayoutScreen, (route) => false);
             },
               child: Text(
             "Submit",

@@ -65,7 +65,7 @@ class CompleteDocumentationScreen extends StatelessWidget {
           ),
           CustomGradientButton(
             onPressed: () {
-              Navigator.pushNamed(context, ScreenName.MainLayoutScreen);
+              Navigator.pushNamed(context, ScreenName.mainLayoutScreen);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

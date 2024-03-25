@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wafi_vendor/core/app_router/screens_name.dart';
 import 'package:wafi_vendor/core/constants/extensions.dart';
 import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box.dart';
 
@@ -49,7 +50,7 @@ class DoneTaskImagesScreen extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ).onlyDirectionalPadding(start: 16),
-            CustomSizedBox(height: 24,),
+            const CustomSizedBox(height: 24,),
             Expanded(
               child: GridView.builder(
                 padding: EdgeInsets.symmetric(
@@ -110,10 +111,12 @@ class DoneTaskImagesScreen extends StatelessWidget {
                 },
               ),
             ),
-            CustomSizedBox(height: 32,),
+            const CustomSizedBox(height: 32,),
             Center(
               child: CustomGradientButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ScreenName.reviewScreen);
+                },
                 borderRadius: 4,
                 width: 237,
                 child: Text(

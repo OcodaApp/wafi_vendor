@@ -9,7 +9,8 @@ import '../../../core/app_theme/app_colors.dart';
 import '../shared_widgets/gradiant_color_button.dart';
 
 class FinishTaskDialog extends StatefulWidget {
-  const FinishTaskDialog({super.key});
+  final bool isDrop;
+  const FinishTaskDialog({super.key, this.isDrop = false});
 
   @override
   State<FinishTaskDialog> createState() => _FinishTaskDialogState();
@@ -37,7 +38,7 @@ class _FinishTaskDialogState extends State<FinishTaskDialog> {
               fontWeight: FontWeight.w700,
             ),
           ),
-          CustomSizedBox(height: 16,),
+          const CustomSizedBox(height: 16,),
           ChildWidget(
             title: "Success",
             icon: Icons.check,
@@ -71,10 +72,10 @@ class _FinishTaskDialogState extends State<FinishTaskDialog> {
             },
             isSelected: currentIndex == 1,
           ),
-          CustomSizedBox(height: 16,),
+          const CustomSizedBox(height: 16,),
           CustomGradientButton(
             onPressed: () {
-              Navigator.pushNamed(context, ScreenName.reviewScreen);
+              Navigator.pushNamed(context, widget.isDrop?ScreenName.doneTaskImagesScreen:ScreenName.reviewScreen,);
             },
             borderRadius: 4,
             width: 164,

@@ -433,7 +433,7 @@ class DropAcceptedTaskDetailsFirstScreen extends StatelessWidget {
             CustomOutlinedButton(
               height: 48,
               onPressed: () {
-                showDialog(context: context, builder: (_)=>FinishTaskDialog(),);
+                showDialog(context: context, builder: (_)=>FinishTaskDialog(isDrop: true,),);
               },
               foregroundColor: AppColors.primaryColor,
               width: double.infinity,

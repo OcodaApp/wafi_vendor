@@ -10,17 +10,17 @@ import 'package:wafi_vendor/presentation/widgets/shared_widgets/custom_sized_box
 class TaskContainer extends StatelessWidget {
   final Widget? child;
   final int index;
-
+  final void Function()? onTap;
   const TaskContainer({
     super.key,
     this.child,
-    required this.index,
+    required this.index, this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap: onTap??() {
         Navigator.pushNamed(
           context,
           index % 2 != 0

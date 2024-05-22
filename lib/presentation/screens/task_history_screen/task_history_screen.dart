@@ -83,6 +83,7 @@ class TaskHistoryScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
               itemBuilder: (_, index) => TaskContainer(
                 index:index,
+                onTap: (){},
               ),
               separatorBuilder: (_, index) => const CustomSizedBox(
                 height: 16,
